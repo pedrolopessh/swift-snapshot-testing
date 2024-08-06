@@ -21,7 +21,7 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .package(url: "https://github.com/swiftlang/swift-syntax", "509.0.0"..<"601.0.0-prerelease")
+    .package(url: "https://github.com/sjavora/swift-syntax-xcframeworks.git", exact: "510.0.1")
   ],
   targets: [
     .target(
@@ -31,9 +31,10 @@ let package = Package(
       name: "InlineSnapshotTesting",
       dependencies: [
         "SnapshotTesting",
-        .product(name: "SwiftParser", package: "swift-syntax"),
-        .product(name: "SwiftSyntax", package: "swift-syntax"),
-        .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
+//        .product(name: "SwiftParser", package: "swift-syntax"),
+//        .product(name: "SwiftSyntax", package: "swift-syntax"),
+//        .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
+			.product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
       ]
     ),
     .testTarget(
